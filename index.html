@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TributaIA - Sistema de Rentas Municipales</title>
+  <link rel="shortcut icon" href="imagen/logo.jpeg" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --color-primario: #004aad;
+      --color-acento: #ffeb3b;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      color: #1e1e1e;
+      background-color: #f5f6fa;
+      scroll-behavior: smooth;
+    }
+
+    /* ===== NAVBAR ===== */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: white;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 16px;
+      z-index: 1000;
+    }
+
+    .logo {
+      height: 36px;
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      height: 3px;
+      width: 24px;
+      background: #333;
+      margin-bottom: 4px;
+      border-radius: 2px;
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+    }
+
+    nav a {
+      color: #000;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1rem;
+      padding: 8px 4px;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: var(--color-primario);
+    }
+
+    /* ===== SECTIONS GENERAL ===== */
+    section {
+      padding: 100px 24px 60px;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .section-content {
+      background-color: white;
+      padding: 40px;
+      border-radius: 12px;
+      max-width: 1100px;
+      width: 100%;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+    }
+
+    h2 {
+      font-size: 2rem;
+      color: var(--color-primario);
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      margin-bottom: 12px;
+    }
+
+    /* ===== RESPONSIVE MENU ===== */
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        gap: 12px;
+        background: #fff;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        box-shadow: 0 8px 10px rgba(0, 0, 0, 0.05);
+        padding: 12px 20px;
+      }
+
+      nav.show {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+
+      section {
+        padding-top: 120px;
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+
+      .section-content {
+        padding: 24px;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- === NAVBAR === -->
+  <header class="navbar">
+    <img src="imagen/logo.jpeg" alt="Logo TributaIA" class="logo" />
+    <div class="menu-toggle" id="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav id="nav">
+      <a href="#que-es">¿Qué es?</a>
+      <a href="#beneficios">Beneficios</a>
+      <a href="#modulos">Módulos</a>
+      <a href="#clientes">Clientes</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <!-- === ¿QUÉ ES? === -->
+  <section id="que-es" style="background: linear-gradient(to bottom, #dbe9f4, #f1f6fb);">
+    <div class="section-content">
+      <img src="imagen/logo.jpeg" alt="Logo TributaIA" style="height: 60px; margin-bottom: 16px;" />
+      <h2>¿Qué es TributaIA?</h2>
+      <p>
+        TributaIA es un sistema especializado en la gestión eficiente de las rentas municipales. Automatiza, centraliza y monitorea pagos de tributos locales, arbitrios, licencias y otros ingresos propios de la municipalidad.
+      </p>
+      <p>
+        Con su interfaz intuitiva, reportes en tiempo real y trazabilidad completa, TributaIA moderniza los procesos municipales, mejora la atención al ciudadano y maximiza la recaudación.
+      </p>
+    </div>
+  </section>
+
+  <script>
+    // Menú toggle para celulares
+    const menuToggle = document.getElementById('menu-toggle');
+    const nav = document.getElementById('nav');
+
+    menuToggle.addEventListener('click', () => {
+      nav.classList.toggle('show');
+    });
+  </script>
+  <!-- === BENEFICIOS === -->
+  <section id="beneficios" style="background-color: #f7f9fc;">
+    <div class="section-content">
+      <h2>Beneficios del Sistema</h2>
+      <div style="display: flex; overflow-x: auto; gap: 16px; scroll-snap-type: x mandatory; padding: 12px 0;">
+        <div style="flex: 0 0 260px; background: white; border-radius: 10px; padding: 16px; scroll-snap-align: start; box-shadow: 0 4px 10px rgba(0,0,0,0.08);">
+          <img src="https://img.icons8.com/fluency/96/cash-in-hand.png" alt="Cobro automático" style="height: 70px; display: block; margin: 0 auto 12px;" />
+          <h3 style="color: #004aad; font-size: 1.1rem;">Cobro Automático</h3>
+          <p>Optimiza el cobro de tributos y arbitrios.</p>
+        </div>
+        <div style="flex: 0 0 260px; background: white; border-radius: 10px; padding: 16px; scroll-snap-align: start; box-shadow: 0 4px 10px rgba(0,0,0,0.08);">
+          <img src="https://img.icons8.com/fluency/96/accuracy.png" alt="Precisión administrativa" style="height: 70px; display: block; margin: 0 auto 12px;" />
+          <h3 style="color: #004aad; font-size: 1.1rem;">Precisión Administrativa</h3>
+          <p>Reduce errores con controles inteligentes.</p>
+        </div>
+        <div style="flex: 0 0 260px; background: white; border-radius: 10px; padding: 16px; scroll-snap-align: start; box-shadow: 0 4px 10px rgba(0,0,0,0.08);">
+          <img src="https://img.icons8.com/fluency/96/combo-chart.png" alt="Reportes en tiempo real" style="height: 70px; display: block; margin: 0 auto 12px;" />
+          <h3 style="color: #004aad; font-size: 1.1rem;">Reportes en Tiempo Real</h3>
+          <p>Información clara e inmediata.</p>
+        </div>
+        <div style="flex: 0 0 260px; background: white; border-radius: 10px; padding: 16px; scroll-snap-align: start; box-shadow: 0 4px 10px rgba(0,0,0,0.08);">
+          <img src="https://img.icons8.com/fluency/96/money-bag.png" alt="Mayor recaudación" style="height: 70px; display: block; margin: 0 auto 12px;" />
+          <h3 style="color: #004aad; font-size: 1.1rem;">Mayor Recaudación</h3>
+          <p>Procesos automatizados que elevan ingresos.</p>
+        </div>
+        <div style="flex: 0 0 260px; background: white; border-radius: 10px; padding: 16px; scroll-snap-align: start; box-shadow: 0 4px 10px rgba(0,0,0,0.08);">
+          <img src="https://img.icons8.com/fluency/96/customer-support.png" alt="Atención al contribuyente" style="height: 70px; display: block; margin: 0 auto 12px;" />
+          <h3 style="color: #004aad; font-size: 1.1rem;">Atención al Contribuyente</h3>
+          <p>Portal amigable y soporte efectivo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- === MÓDULOS === -->
+  <section id="modulos" style="background-color: #ffffff;">
+    <div class="section-content">
+      <h2>Módulos del Sistema</h2>
+      <div style="display: flex; overflow-x: auto; gap: 16px; scroll-snap-type: x mandatory;">
+        <div style="flex: 0 0 280px; scroll-snap-align: start;">
+          <img src="https://munipimentel.gob.pe/images/disenio-rentas/Rentas-Pago-Impuesto.jpg" alt="Módulo 1" style="width: 100%; height: 180px; object-fit: cover; border-radius: 10px;" />
+          <h3 style="margin-top: 10px;">Predios y Contribuyentes</h3>
+        </div>
+        <div style="flex: 0 0 280px; scroll-snap-align: start;">
+          <img src="https://munipimentel.gob.pe/images/disenio-rentas/Rentas-Pago-Arbitrios.jpg" alt="Módulo 2" style="width: 100%; height: 180px; object-fit: cover; border-radius: 10px;" />
+          <h3 style="margin-top: 10px;">Tributos y Arbitrios</h3>
+        </div>
+        <div style="flex: 0 0 280px; scroll-snap-align: start;">
+          <img src="https://linkeatuabogado.com/wp-content/uploads/2020/11/licencia-funcionamiento-pasos-requisitos-costos-tramite.jpg" alt="Módulo 3" style="width: 100%; height: 180px; object-fit: cover; border-radius: 10px;" />
+          <h3 style="margin-top: 10px;">Licencias de Funcionamiento</h3>
+        </div>
+        <div style="flex: 0 0 280px; scroll-snap-align: start;">
+          <img src="https://emiteperu.com/uploads/post/tipos-de-comprobantes-de-pago-boleta-de-venta-electronica.png" alt="Módulo 4" style="width: 100%; height: 180px; object-fit: cover; border-radius: 10px;" />
+          <h3 style="margin-top: 10px;">Recibos y Boletas</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- === CLIENTES === -->
+  <section id="clientes" style="background-color: #f2f5f9;">
+    <div class="section-content">
+      <h2>Municipalidades Clientes</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin-top: 20px;">
+        <div>
+          <img src="https://yt3.googleusercontent.com/QyJ7OcKsr5VjXGu5G9ZU8oSe8UhIcKcdX-LPaa3JRW6nCBJXOU2FOq0CTh0I83wZHbZQyCIA34E=s900-c-k-c0x00ffffff-no-rj" alt="Cliente 1" style="width: 100%; height: 180px; object-fit: cover; border-radius: 12px;" />
+          <p style="text-align: center; margin-top: 10px;">Municipalidad de Rioja</p>
+        </div>
+        <div>
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4vSJG8gFpyT_fx0tc4n0OlZn20pFBQbdM8w&s" alt="Cliente 2" style="width: 100%; height: 180px; object-fit: cover; border-radius: 12px;" />
+          <p style="text-align: center; margin-top: 10px;">Alto Amazonas</p>
+        </div>
+        <div>
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJZDhAaa-Kxz-ddncxtIr6rdcVP6OKsjHFaw&s" alt="Cliente 3" style="width: 100%; height: 180px; object-fit: cover; border-radius: 12px;" />
+          <p style="text-align: center; margin-top: 10px;">Nueva Cajamarca</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- === CONTACTO === -->
+  <section id="contacto" style="background: url('https://images.unsplash.com/photo-1521791136064-7986c2920216') center/cover no-repeat;">
+    <div class="section-content" style="background: rgba(255,255,255,0.95); text-align: center;">
+      <h2>Contacto e Información</h2>
+      <p>📞 WhatsApp: +51 970 763 782</p>
+      <p>📧 ventas@tecnotrends.pe</p>
+      <p>📍 Jr. Lima #816 – Tarapoto, Perú</p>
+      <a href="https://wa.me/51970763782" target="_blank" style="display: inline-block; margin-top: 20px; padding: 12px 28px; border-radius: 30px; background: #25D366; color: white; font-weight: bold; text-decoration: none;">📱 Enviar mensaje por WhatsApp</a>
+    </div>
+  </section>
+
+  <!-- === WHATSAPP FLOAT === -->
+  <a href="https://wa.me/51970763782" target="_blank" title="Contáctanos por WhatsApp"
+     style="position: fixed; width: 55px; height: 55px; bottom: 20px; right: 20px; background: #25D366; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.3); z-index: 999;">
+    📱
+  </a>
+
+  <!-- === SCRIPTS === -->
+  <script>
+    // Menú hamburguesa toggle
+    const toggle = document.getElementById('menu-toggle');
+    
+    toggle.addEventListener('click', () => {
+      nav.classList.toggle('show');
+    });
+
+    // Auto-scroll carruseles
+    const scrollers = document.querySelectorAll('[style*="scroll-snap-type"]');
+    scrollers.forEach(scroller => {
+      let scrollAmount = 0;
+      setInterval(() => {
+        if (scroller.scrollWidth <= scroller.clientWidth) return;
+        scrollAmount += 280;
+        if (scrollAmount >= scroller.scrollWidth - scroller.clientWidth) scrollAmount = 0;
+        scroller.scrollTo({ left: scrollAmount, behavior: 'smooth' });
+      }, 5000);
+    });
+  </script>
+
+</body>
+</html>
